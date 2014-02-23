@@ -1,0 +1,5 @@
+Revision history for App-Provision-Tiny
+
+0.01  2014-02-23
+    - Imported functionality from devel repo.
+    - Minted by Dist::Zilla
