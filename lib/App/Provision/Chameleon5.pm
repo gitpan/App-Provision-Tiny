@@ -1,5 +1,5 @@
 package App::Provision::Chameleon5;
-$App::Provision::Chameleon5::VERSION = '0.01';
+$App::Provision::Chameleon5::VERSION = '0.02';
 BEGIN {
   $App::Provision::Chameleon5::AUTHORITY = 'cpan:GENE';
 }
@@ -45,7 +45,7 @@ App::Provision::Chameleon5
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 

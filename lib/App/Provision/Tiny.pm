@@ -10,7 +10,7 @@ use warnings;
 
 use File::Which;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 
@@ -85,7 +85,7 @@ App::Provision::Tiny - Provision computers
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

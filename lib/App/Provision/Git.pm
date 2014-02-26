@@ -1,5 +1,5 @@
 package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.01';
+$App::Provision::Git::VERSION = '0.02';
 BEGIN {
   $App::Provision::Git::AUTHORITY = 'cpan:GENE';
 }
@@ -10,9 +10,18 @@ use parent qw( App::Provision::Tiny );
 sub git
 {
     my $self = shift;
-    $self->recipe(
-      [qw( brew install git )],
-    );
+    if ($self->{system} eq 'osx' )
+    {
+        $self->recipe(
+          [qw( brew install git )],
+        );
+    }
+    elsif ($self->{system} eq 'apt' )
+    {
+        $self->recipe(
+          [qw( sudo apt-get install git )],
+        );
+    }
 }
 
 1;
@@ -29,7 +38,7 @@ App::Provision::Git
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 

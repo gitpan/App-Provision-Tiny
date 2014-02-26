@@ -1,5 +1,5 @@
 package App::Provision::Foundation;
-$App::Provision::Foundation::VERSION = '0.01';
+$App::Provision::Foundation::VERSION = '0.02';
 BEGIN {
   $App::Provision::Foundation::AUTHORITY = 'cpan:GENE';
 }
@@ -48,7 +48,7 @@ App::Provision::Foundation
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 
