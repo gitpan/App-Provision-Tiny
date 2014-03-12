@@ -1,5 +1,9 @@
 Revision history for App-Provision-Tiny
 
+0.03  2014-03-12
+    - Replaced App::Provision::Foo::foo() with the meet() method.
+    - Improved documentation.
+
 0.02  2014-02-26
     - Added multi system recipe definition (currently osx and apt).
 

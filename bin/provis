@@ -43,7 +43,7 @@ exit -1 unless $option->getOptions($options, $usage);
 
 $program = lc $program;
 my $app = use_module('App::Provision::' . ucfirst($program))->new(%$switch);
-$app->$program();
+$app->meet();
 
 __END__
 
@@ -57,7 +57,7 @@ provis
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

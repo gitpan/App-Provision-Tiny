@@ -1,11 +1,12 @@
 package App::Provision::Homebrew;
-$App::Provision::Homebrew::VERSION = '0.02';
+$App::Provision::Homebrew::VERSION = '0.03';
 BEGIN {
   $App::Provision::Homebrew::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
+use File::Which;
 
 sub condition
 {
@@ -14,13 +15,15 @@ sub condition
     # Reset the program name.
     $self->{program} = 'brew';
 
-    my $condition = -e $self->{program};
+    my $callback  = shift || sub { which($self->{program}) };
+    my $condition = $callback->();
+
     warn $self->{program}, ' is', ($condition ? '' : "n't"), " installed\n";
 
     return $condition ? 1 : 0;
 }
 
-sub homebrew
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -43,7 +46,7 @@ App::Provision::Homebrew
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

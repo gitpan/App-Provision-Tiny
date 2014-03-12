@@ -1,5 +1,5 @@
 package App::Provision::Cpanupdate;
-$App::Provision::Cpanupdate::VERSION = '0.02';
+$App::Provision::Cpanupdate::VERSION = '0.03';
 BEGIN {
   $App::Provision::Cpanupdate::AUTHORITY = 'cpan:GENE';
 }
@@ -17,12 +17,12 @@ sub condition
     return 0; # Always update.
 }
 
-sub cpanupdate
+sub meet
 {
     my $self = shift;
     $self->recipe(
       [
-"find $self->{repo} -type d -name lib | xargs -n 1 dirname | sort | while read line; do echo \$line && cd \$line && cpanm .; done"
+"find $self->{repo} -type d -name lib | xargs -n 1 dirname | sort | while read line; do echo \$line && cd \$line && cpan .; done"
       ],
     );
 }
@@ -41,7 +41,7 @@ App::Provision::Cpanupdate
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

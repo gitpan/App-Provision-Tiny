@@ -1,5 +1,5 @@
 package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.02';
+$App::Provision::Git::VERSION = '0.03';
 BEGIN {
   $App::Provision::Git::AUTHORITY = 'cpan:GENE';
 }
@@ -7,7 +7,7 @@ use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
 
-sub git
+sub meet
 {
     my $self = shift;
     if ($self->{system} eq 'osx' )
@@ -38,7 +38,7 @@ App::Provision::Git
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

@@ -1,5 +1,5 @@
 package App::Provision::Foundation;
-$App::Provision::Foundation::VERSION = '0.02';
+$App::Provision::Foundation::VERSION = '0.03';
 BEGIN {
   $App::Provision::Foundation::AUTHORITY = 'cpan:GENE';
 }
@@ -20,7 +20,7 @@ sub condition
     return $condition ? 1 : 0;
 }
 
-sub foundation
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -48,7 +48,7 @@ App::Provision::Foundation
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

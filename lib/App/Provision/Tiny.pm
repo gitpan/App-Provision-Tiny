@@ -10,7 +10,7 @@ use warnings;
 
 use File::Which;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 
@@ -32,8 +32,10 @@ sub _init
     # Turn arguments into object attributes.
     $self->{$_} = $args{$_} || undef for keys %args;
 
-    # Set defaults.
+    # Set the system to provision.
     $self->{system} ||= 'osx';
+
+    # Set the program to provision on the system.
     unless ($self->{program})
     {
         $self->{class} =~ s/App::Provision::(\w+)$/$1/;
@@ -85,17 +87,18 @@ App::Provision::Tiny - Provision computers
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
   # With the module:
   use App::Provision::Foo;
   $app = App::Provision::Foo->new;
-  $app->foo;
+  $app->meet;
 
   # On the command line:
-  > provis foo
+  > provis homebrew
+  > provis cpanmupgrade --repo ~/sandbox
 
 =head1 DESCRIPTION
 
@@ -123,19 +126,21 @@ Argument: default
 
 =head2 condition()
 
-This is the condition to check for the presence of a program, and is to
-redefined in your subclass, if anything beyond effectively C<`which program`>
+This is the condition to check for the presence of a program, and should be
+redefined in your subclass, if anything beyond a simple C<`which program`>
 is needed.
 
 =head2 recipe()
 
 This is the actual set of steps to take to check for and install a program, and
-is to be redefined in your subclass.  If not obvious, they can be "simple"
-system commands, complex perl or a combination thereof.
+should be used, or redefined, in your subclass, in the C<meet()> method.
+
+The steps can be simple system (i.e. "shell") commands or complex perl.
+By default, this base recipe uses the C<system_install()> method.
 
 =head2 system_install()
 
-Use the C<system()> function to install, inside your subclass method.
+Use a simple C<system(@command)> function to install the program.
 
 =head1 AUTHOR
 

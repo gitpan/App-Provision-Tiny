@@ -1,5 +1,5 @@
 package App::Provision::Repoupdate;
-$App::Provision::Repoupdate::VERSION = '0.02';
+$App::Provision::Repoupdate::VERSION = '0.03';
 BEGIN {
   $App::Provision::Repoupdate::AUTHORITY = 'cpan:GENE';
 }
@@ -17,7 +17,7 @@ sub condition
     return 0; # Always update
 }
 
-sub repoupdate
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -41,7 +41,7 @@ App::Provision::Repoupdate
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

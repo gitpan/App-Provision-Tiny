@@ -1,5 +1,5 @@
 package App::Provision::Perlbrew;
-$App::Provision::Perlbrew::VERSION = '0.02';
+$App::Provision::Perlbrew::VERSION = '0.03';
 BEGIN {
   $App::Provision::Perlbrew::AUTHORITY = 'cpan:GENE';
 }
@@ -7,7 +7,7 @@ use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
 
-sub perlbrew
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -32,7 +32,7 @@ App::Provision::Perlbrew
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

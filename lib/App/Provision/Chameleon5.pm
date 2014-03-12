@@ -1,5 +1,5 @@
 package App::Provision::Chameleon5;
-$App::Provision::Chameleon5::VERSION = '0.02';
+$App::Provision::Chameleon5::VERSION = '0.03';
 BEGIN {
   $App::Provision::Chameleon5::AUTHORITY = 'cpan:GENE';
 }
@@ -20,7 +20,7 @@ sub condition
     return $condition ? 1 : 0;
 }
 
-sub chameleon5
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -45,7 +45,7 @@ App::Provision::Chameleon5
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

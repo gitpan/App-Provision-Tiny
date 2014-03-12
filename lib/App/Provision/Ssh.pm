@@ -1,5 +1,5 @@
 package App::Provision::Ssh;
-$App::Provision::Ssh::VERSION = '0.02';
+$App::Provision::Ssh::VERSION = '0.03';
 BEGIN {
   $App::Provision::Ssh::AUTHORITY = 'cpan:GENE';
 }
@@ -24,7 +24,7 @@ sub condition
     return $condition ? 1 : 0;
 }
 
-sub ssh
+sub meet
 {
     my $self = shift;
     $self->recipe(
@@ -48,7 +48,7 @@ App::Provision::Ssh
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 

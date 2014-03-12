@@ -1,5 +1,5 @@
 package App::Provision::Sequelpro;
-$App::Provision::Sequelpro::VERSION = '0.02';
+$App::Provision::Sequelpro::VERSION = '0.03';
 BEGIN {
   $App::Provision::Sequelpro::AUTHORITY = 'cpan:GENE';
 }
@@ -20,7 +20,7 @@ sub condition
     return $condition ? 1 : 0;
 }
 
-sub sequelpro
+sub meet
 {
     my $self = shift;
     if ( $self->{system} eq 'osx' )
@@ -48,7 +48,7 @@ App::Provision::Sequelpro
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 AUTHOR
 
