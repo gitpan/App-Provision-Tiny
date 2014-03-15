@@ -1,5 +1,5 @@
 package App::Provision::Homebrew;
-$App::Provision::Homebrew::VERSION = '0.03';
+$App::Provision::Homebrew::VERSION = '0.04';
 BEGIN {
   $App::Provision::Homebrew::AUTHORITY = 'cpan:GENE';
 }
@@ -7,6 +7,11 @@ use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
 use File::Which;
+
+sub deps
+{
+    return qw( ruby curl );
+}
 
 sub condition
 {
@@ -27,7 +32,7 @@ sub meet
 {
     my $self = shift;
     $self->recipe(
-      [ 'ruby', '-e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"' ],
+      [ 'ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"' ],
       [ 'brew', 'doctor' ],
     );
 }
@@ -46,7 +51,7 @@ App::Provision::Homebrew
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 AUTHOR
 

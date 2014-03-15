@@ -1,7 +1,7 @@
-package App::Provision::Repoupdate;
-$App::Provision::Repoupdate::VERSION = '0.04';
+package App::Provision::Cpanmupdate;
+$App::Provision::Cpanmupdate::VERSION = '0.04';
 BEGIN {
-  $App::Provision::Repoupdate::AUTHORITY = 'cpan:GENE';
+  $App::Provision::Cpanmupdate::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
@@ -14,7 +14,7 @@ sub condition
     die "Program '$self->{program}' must include a --repo\n"
         unless $self->{repo};
 
-    return 0; # Always update
+    return 0; # Always update.
 }
 
 sub meet
@@ -22,7 +22,7 @@ sub meet
     my $self = shift;
     $self->recipe(
       [
-"find $self->{repo} -type d -name .git | xargs -n 1 dirname | sort | while read line; do echo \$line && cd \$line && git pull; done"
+"find $self->{repo} -type d -name lib | xargs -n 1 dirname | sort | while read line; do echo \$line && cd \$line && cpanm .; done"
       ],
     );
 }
@@ -37,7 +37,7 @@ __END__
 
 =head1 NAME
 
-App::Provision::Repoupdate
+App::Provision::Cpanmupdate
 
 =head1 VERSION
 

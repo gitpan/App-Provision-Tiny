@@ -1,5 +1,5 @@
 package App::Provision::Perlbrew;
-$App::Provision::Perlbrew::VERSION = '0.03';
+$App::Provision::Perlbrew::VERSION = '0.04';
 BEGIN {
   $App::Provision::Perlbrew::AUTHORITY = 'cpan:GENE';
 }
@@ -7,12 +7,19 @@ use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
 
+sub deps
+{
+    return qw( curl );
+}
+
 sub meet
 {
     my $self = shift;
     $self->recipe(
       [ 'curl -L http://install.perlbrew.pl | bash' ],
-      [ "echo 'source ~/perl5/perlbrew/etc/bashrc >> $ENV{HOME}/.bash_profile" ],
+      [ 'touch', "$ENV{HOME}/.bash_profile" ],
+      [ "echo 'source ~/perl5/perlbrew/etc/bashrc' >> $ENV{HOME}/.bash_profile" ],
+      [ "`source', $ENV{HOME}/.bash_profile`" ],
       [qw( perlbrew install perl-5.18.2 )],
       [qw( perlbrew switch perl-5.18.2 )],
     );
@@ -32,7 +39,7 @@ App::Provision::Perlbrew
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 AUTHOR
 

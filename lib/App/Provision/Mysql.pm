@@ -1,11 +1,16 @@
 package App::Provision::Mysql;
-$App::Provision::Mysql::VERSION = '0.03';
+$App::Provision::Mysql::VERSION = '0.04';
 BEGIN {
   $App::Provision::Mysql::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
+
+sub deps
+{
+    return qw( homebrew );
+}
 
 sub meet
 {
@@ -39,7 +44,7 @@ App::Provision::Mysql
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 AUTHOR
 

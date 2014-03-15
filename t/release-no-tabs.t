@@ -17,7 +17,10 @@ use Test::NoTabs;
 my @files = (
     'bin/provis',
     'lib/App/Provision/Chameleon5.pm',
+    'lib/App/Provision/Cpanm.pm',
+    'lib/App/Provision/Cpanmupdate.pm',
     'lib/App/Provision/Cpanupdate.pm',
+    'lib/App/Provision/Curl.pm',
     'lib/App/Provision/Foundation.pm',
     'lib/App/Provision/Git.pm',
     'lib/App/Provision/Homebrew.pm',
@@ -25,8 +28,10 @@ my @files = (
     'lib/App/Provision/Perlbrew.pm',
     'lib/App/Provision/Repoupdate.pm',
     'lib/App/Provision/Sequelpro.pm',
+    'lib/App/Provision/Sourcetree.pm',
     'lib/App/Provision/Ssh.pm',
-    'lib/App/Provision/Tiny.pm'
+    'lib/App/Provision/Tiny.pm',
+    'lib/App/Provision/Wget.pm'
 );
 
 notabs_ok($_) foreach @files;

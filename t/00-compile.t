@@ -4,13 +4,16 @@ use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.039
 
-use Test::More  tests => 12 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+use Test::More  tests => 17 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
 my @module_files = (
     'App/Provision/Chameleon5.pm',
+    'App/Provision/Cpanm.pm',
+    'App/Provision/Cpanmupdate.pm',
     'App/Provision/Cpanupdate.pm',
+    'App/Provision/Curl.pm',
     'App/Provision/Foundation.pm',
     'App/Provision/Git.pm',
     'App/Provision/Homebrew.pm',
@@ -18,8 +21,10 @@ my @module_files = (
     'App/Provision/Perlbrew.pm',
     'App/Provision/Repoupdate.pm',
     'App/Provision/Sequelpro.pm',
+    'App/Provision/Sourcetree.pm',
     'App/Provision/Ssh.pm',
-    'App/Provision/Tiny.pm'
+    'App/Provision/Tiny.pm',
+    'App/Provision/Wget.pm'
 );
 
 my @scripts = (

@@ -17,6 +17,10 @@ my $options = {
         env     => '-',
         default => '',
     },
+    force => {
+        type    => '',
+        default => 0,
+    },
     keytype => {
         type    => '=s',
         default => 'rsa',
@@ -35,7 +39,7 @@ my $options = {
     site => {
         type    => '=s',
         default => 'localhost',
-        verbose => 'The name in chameleon5/domains/name',
+        verbose => 'Webserver root []',
     },
 };
 my $option = Getopt::Simple->new;
@@ -57,7 +61,7 @@ provis
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 AUTHOR
 

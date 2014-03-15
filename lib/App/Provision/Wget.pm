@@ -1,7 +1,7 @@
-package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.04';
+package App::Provision::Wget;
+$App::Provision::Wget::VERSION = '0.04';
 BEGIN {
-  $App::Provision::Git::AUTHORITY = 'cpan:GENE';
+  $App::Provision::Wget::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
@@ -18,13 +18,13 @@ sub meet
     if ($self->{system} eq 'osx' )
     {
         $self->recipe(
-          [qw( brew install git )],
+          [qw( brew install wget )],
         );
     }
     elsif ($self->{system} eq 'apt' )
     {
         $self->recipe(
-          [qw( sudo apt-get install git )],
+          [qw( sudo apt-get install wget )],
         );
     }
 }
@@ -39,7 +39,7 @@ __END__
 
 =head1 NAME
 
-App::Provision::Git
+App::Provision::Wget
 
 =head1 VERSION
 

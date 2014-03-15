@@ -1,7 +1,7 @@
-package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.04';
+package App::Provision::Perlbrew;
+$App::Provision::Perlbrew::VERSION = '0.04';
 BEGIN {
-  $App::Provision::Git::AUTHORITY = 'cpan:GENE';
+  $App::Provision::Perlbrew::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
@@ -9,24 +9,15 @@ use parent qw( App::Provision::Tiny );
 
 sub deps
 {
-    return qw( homebrew );
+    return qw( curl );
 }
 
 sub meet
 {
     my $self = shift;
-    if ($self->{system} eq 'osx' )
-    {
-        $self->recipe(
-          [qw( brew install git )],
-        );
-    }
-    elsif ($self->{system} eq 'apt' )
-    {
-        $self->recipe(
-          [qw( sudo apt-get install git )],
-        );
-    }
+    $self->recipe(
+      [ 'curl -L http://cpanmin.us | perl - App::cpanminus' ],
+    );
 }
 
 1;
@@ -39,7 +30,7 @@ __END__
 
 =head1 NAME
 
-App::Provision::Git
+App::Provision::Perlbrew
 
 =head1 VERSION
 

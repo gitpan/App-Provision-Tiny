@@ -1,5 +1,5 @@
 package App::Provision::Cpanupdate;
-$App::Provision::Cpanupdate::VERSION = '0.03';
+$App::Provision::Cpanupdate::VERSION = '0.04';
 BEGIN {
   $App::Provision::Cpanupdate::AUTHORITY = 'cpan:GENE';
 }
@@ -41,7 +41,7 @@ App::Provision::Cpanupdate
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 AUTHOR
 

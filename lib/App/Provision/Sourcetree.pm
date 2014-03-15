@@ -1,7 +1,7 @@
-package App::Provision::Sequelpro;
-$App::Provision::Sequelpro::VERSION = '0.04';
+package App::Provision::SourceTree;
+$App::Provision::SourceTree::VERSION = '0.04';
 BEGIN {
-  $App::Provision::Sequelpro::AUTHORITY = 'cpan:GENE';
+  $App::Provision::SourceTree::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
@@ -17,7 +17,7 @@ sub condition
     my $self = shift;
 
     # The program name is a special case for OSX.apps.
-    $self->{program} = '/Applications/Sequel Pro.app';
+    $self->{program} = '/Applications/SourceTree.app';
 
     my $condition = -d $self->{program};
     warn $self->{program}, ' is', ($condition ? '' : "n't"), " installed\n";
@@ -31,10 +31,10 @@ sub meet
     if ( $self->{system} eq 'osx' )
     {
         $self->recipe(
-          [ 'wget', 'https://sequel-pro.googlecode.com/files/sequel-pro-1.0.2.dmg', '-P', "$ENV{HOME}/Downloads/" ],
-          [ 'hdiutil', 'attach', "$ENV{HOME}/Downloads/sequel-pro-1.0.2.dmg", ],
-          [ 'cp', '-r', '/Volumes/Sequel Pro 1.0.2/Sequel Pro.app', '/Applications/' ],
-          [ 'hdiutil', 'detach', '/Volumes/Sequel Pro 1.0.2' ],
+          [ 'wget', 'http://downloads.atlassian.com/software/sourcetree/SourceTree_1.8.1.dmg', '-P', "$ENV{HOME}/Downloads/" ],
+          [ 'hdiutil', 'attach', "$ENV{HOME}/Downloads/SourceTree_1.8.1.dmg", ],
+          [ 'cp', '-r', '/Volumes/SourceTree/SourceTree.app', '/Applications/' ],
+          [ 'hdiutil', 'detach', '/Volumes/SourceTree' ],
         );
     }
 }
@@ -49,7 +49,7 @@ __END__
 
 =head1 NAME
 
-App::Provision::Sequelpro
+App::Provision::SourceTree
 
 =head1 VERSION
 

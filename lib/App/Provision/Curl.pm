@@ -1,7 +1,7 @@
-package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.04';
+package App::Provision::Curl;
+$App::Provision::Curl::VERSION = '0.04';
 BEGIN {
-  $App::Provision::Git::AUTHORITY = 'cpan:GENE';
+  $App::Provision::Curl::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
@@ -18,13 +18,13 @@ sub meet
     if ($self->{system} eq 'osx' )
     {
         $self->recipe(
-          [qw( brew install git )],
+          [qw( brew install curl )],
         );
     }
     elsif ($self->{system} eq 'apt' )
     {
         $self->recipe(
-          [qw( sudo apt-get install git )],
+          [qw( sudo apt-get install curl )],
         );
     }
 }
@@ -39,7 +39,7 @@ __END__
 
 =head1 NAME
 
-App::Provision::Git
+App::Provision::Curl
 
 =head1 VERSION
 

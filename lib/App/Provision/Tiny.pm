@@ -10,7 +10,7 @@ use warnings;
 
 use File::Which;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 
@@ -58,7 +58,7 @@ sub recipe
 {
     my $self = shift;
     my @steps = @_;
-    $self->system_install(@steps) unless $self->condition;
+    $self->system_install(@steps) if $self->{force} || !$self->condition;
 }
 
 
@@ -87,25 +87,25 @@ App::Provision::Tiny - Provision computers
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
   # With the module:
   use App::Provision::Foo;
-  $app = App::Provision::Foo->new;
-  $app->meet;
+  $foo = App::Provision::Foo->new;
+  $foo->meet;
 
-  # On the command line:
-  > provis homebrew
-  > provis cpanmupgrade --repo ~/sandbox
+  # Command line examples:
+  > provis wget
+  > provis ssh --keytype dsa --keyname github
 
 =head1 DESCRIPTION
 
 An C<App::Provision::Tiny> together with a sub-classed recipe module (like
 C<Foo>), contain the methods to provision a workstation or server.
 
-* Currently, the included recipes are for OS X machines.
+* Currently, the included recipes are for B<homebrew> or B<apt> based machines.
 
 =head1 NAME
 
