@@ -1,5 +1,5 @@
 package App::Provision::Wget;
-$App::Provision::Wget::VERSION = '0.04';
+$App::Provision::Wget::VERSION = '0.0401';
 BEGIN {
   $App::Provision::Wget::AUTHORITY = 'cpan:GENE';
 }
@@ -43,7 +43,7 @@ App::Provision::Wget
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 AUTHOR
 

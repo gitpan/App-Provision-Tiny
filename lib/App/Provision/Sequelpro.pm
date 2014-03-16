@@ -1,5 +1,5 @@
 package App::Provision::Sequelpro;
-$App::Provision::Sequelpro::VERSION = '0.04';
+$App::Provision::Sequelpro::VERSION = '0.0401';
 BEGIN {
   $App::Provision::Sequelpro::AUTHORITY = 'cpan:GENE';
 }
@@ -16,6 +16,9 @@ sub condition
 {
     my $self = shift;
 
+    die "Program '$self->{program}' must include a --release\n"
+        unless $self->{release};
+
     # The program name is a special case for OSX.apps.
     $self->{program} = '/Applications/Sequel Pro.app';
 
@@ -31,10 +34,10 @@ sub meet
     if ( $self->{system} eq 'osx' )
     {
         $self->recipe(
-          [ 'wget', 'https://sequel-pro.googlecode.com/files/sequel-pro-1.0.2.dmg', '-P', "$ENV{HOME}/Downloads/" ],
-          [ 'hdiutil', 'attach', "$ENV{HOME}/Downloads/sequel-pro-1.0.2.dmg", ],
-          [ 'cp', '-r', '/Volumes/Sequel Pro 1.0.2/Sequel Pro.app', '/Applications/' ],
-          [ 'hdiutil', 'detach', '/Volumes/Sequel Pro 1.0.2' ],
+          [ 'wget', "https://sequel-pro.googlecode.com/files/sequel-pro-$self->{release}.dmg", '-P', "$ENV{HOME}/Downloads/" ],
+          [ 'hdiutil', 'attach', "$ENV{HOME}/Downloads/sequel-pro-$self->{release}.dmg", ],
+          [ 'cp', '-r', "/Volumes/Sequel Pro $self->{release}/Sequel Pro.app", '/Applications/' ],
+          [ 'hdiutil', 'detach', "/Volumes/Sequel Pro $self->{release}" ],
         );
     }
 }
@@ -53,7 +56,7 @@ App::Provision::Sequelpro
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 AUTHOR
 

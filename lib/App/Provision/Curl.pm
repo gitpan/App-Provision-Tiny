@@ -1,5 +1,5 @@
 package App::Provision::Curl;
-$App::Provision::Curl::VERSION = '0.04';
+$App::Provision::Curl::VERSION = '0.0401';
 BEGIN {
   $App::Provision::Curl::AUTHORITY = 'cpan:GENE';
 }
@@ -43,7 +43,7 @@ App::Provision::Curl
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 AUTHOR
 

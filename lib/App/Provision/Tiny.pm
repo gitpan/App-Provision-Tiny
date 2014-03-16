@@ -10,7 +10,7 @@ use warnings;
 
 use File::Which;
 
-our $VERSION = '0.04';
+our $VERSION = '0.0401';
 
 
 
@@ -87,7 +87,7 @@ App::Provision::Tiny - Provision computers
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 SYNOPSIS
 
@@ -99,6 +99,7 @@ version 0.04
   # Command line examples:
   > provis wget
   > provis ssh --keytype dsa --keyname github
+  > provis foundation --release x.y.z
 
 =head1 DESCRIPTION
 
@@ -121,8 +122,13 @@ Create a new C<App::Provision::Tiny> object.
 
 Argument: default
 
- program: undef
  system:  osx
+ program: undef
+ release: undef
+ repo:    undef
+ site:    undef
+ keytype: undef
+ keyname: undef
 
 =head2 condition()
 

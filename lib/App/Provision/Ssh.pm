@@ -1,5 +1,5 @@
 package App::Provision::Ssh;
-$App::Provision::Ssh::VERSION = '0.04';
+$App::Provision::Ssh::VERSION = '0.0401';
 BEGIN {
   $App::Provision::Ssh::AUTHORITY = 'cpan:GENE';
 }
@@ -58,7 +58,7 @@ App::Provision::Ssh
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 AUTHOR
 

@@ -1,5 +1,5 @@
 package App::Provision::Git;
-$App::Provision::Git::VERSION = '0.04';
+$App::Provision::Git::VERSION = '0.0401';
 BEGIN {
   $App::Provision::Git::AUTHORITY = 'cpan:GENE';
 }
@@ -43,7 +43,7 @@ App::Provision::Git
 
 =head1 VERSION
 
-version 0.04
+version 0.0401
 
 =head1 AUTHOR
 
