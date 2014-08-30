@@ -1,11 +1,17 @@
 package App::Provision::Foundation;
-$App::Provision::Foundation::VERSION = '0.0401';
+$App::Provision::Foundation::VERSION = '0.0402';
 BEGIN {
   $App::Provision::Foundation::AUTHORITY = 'cpan:GENE';
 }
 use strict;
 use warnings;
 use parent qw( App::Provision::Tiny );
+
+sub deps
+{
+    my $self = shift;
+    return qw( wget unzip );
+}
 
 sub condition
 {
@@ -48,7 +54,7 @@ App::Provision::Foundation
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 AUTHOR
 

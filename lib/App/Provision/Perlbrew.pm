@@ -1,5 +1,5 @@
 package App::Provision::Perlbrew;
-$App::Provision::Perlbrew::VERSION = '0.0401';
+$App::Provision::Perlbrew::VERSION = '0.0402';
 BEGIN {
   $App::Provision::Perlbrew::AUTHORITY = 'cpan:GENE';
 }
@@ -42,7 +42,7 @@ App::Provision::Perlbrew
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 AUTHOR
 

@@ -1,5 +1,5 @@
 package App::Provision::Mysql;
-$App::Provision::Mysql::VERSION = '0.0401';
+$App::Provision::Mysql::VERSION = '0.0402';
 BEGIN {
   $App::Provision::Mysql::AUTHORITY = 'cpan:GENE';
 }
@@ -44,7 +44,7 @@ App::Provision::Mysql
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 AUTHOR
 

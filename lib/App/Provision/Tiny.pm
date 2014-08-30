@@ -10,7 +10,7 @@ use warnings;
 
 use File::Which;
 
-our $VERSION = '0.0401';
+our $VERSION = '0.0402';
 
 
 
@@ -87,19 +87,20 @@ App::Provision::Tiny - Provision computers
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 SYNOPSIS
 
   # With the module:
   use App::Provision::Foo;
   $foo = App::Provision::Foo->new;
+  print join(', ', $foo->deps), "\n"; # Just for info, currently
   $foo->meet;
 
   # Command line examples:
   > provis wget
   > provis ssh --keytype dsa --keyname github
-  > provis foundation --release x.y.z
+  > provis foundation --release x.y.z --site /the/www/site/root
 
 =head1 DESCRIPTION
 
@@ -107,10 +108,6 @@ An C<App::Provision::Tiny> together with a sub-classed recipe module (like
 C<Foo>), contain the methods to provision a workstation or server.
 
 * Currently, the included recipes are for B<homebrew> or B<apt> based machines.
-
-=head1 NAME
-
-App::Provision::Tiny - Provision computers
 
 =head1 METHODS
 

@@ -1,5 +1,5 @@
 package App::Provision::Homebrew;
-$App::Provision::Homebrew::VERSION = '0.0401';
+$App::Provision::Homebrew::VERSION = '0.0402';
 BEGIN {
   $App::Provision::Homebrew::AUTHORITY = 'cpan:GENE';
 }
@@ -51,7 +51,7 @@ App::Provision::Homebrew
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 AUTHOR
 

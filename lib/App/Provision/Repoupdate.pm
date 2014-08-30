@@ -1,5 +1,5 @@
 package App::Provision::Repoupdate;
-$App::Provision::Repoupdate::VERSION = '0.0401';
+$App::Provision::Repoupdate::VERSION = '0.0402';
 BEGIN {
   $App::Provision::Repoupdate::AUTHORITY = 'cpan:GENE';
 }
@@ -41,7 +41,7 @@ App::Provision::Repoupdate
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 AUTHOR
 
